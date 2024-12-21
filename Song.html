@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logop.jpg" type="image/x-icon">
+    <title>Paramore</title> <br>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+ 
+   
+        
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			display:flex;
+			flex-direction:column;
+			min-height: -1vh;               
+		}
+		
+		main{
+            display :flex;
+        }
+
+		h1
+        {
+            margin: 0;            
+		}
+
+        p 
+        {
+            color: rgb(17, 17, 17);
+        }
+        footer{
+            Font-family: 'Crimson Text', serif;
+        }
+        .right
+        {
+            font-family:'Manrope', sans-serif ;
+            width : 50%;
+            display :flex;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 55%;
+        }
+
+        .left
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            background-color: rgb(243, 182, 50);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 15px;
+        }
+
+        .lyrics
+        {
+            text-align: center;
+            display: flex;
+            row-gap: 10px;
+        }
+        .title
+        {
+            display: flex;
+            color :rgb(0, 0, 0); 
+            justify-content: center;
+            font-size:x-large;
+            padding-top: 0%;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height:100%;
+            display: flex;
+        }
+
+        .center-top 
+        {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+        }
+
+        .slides{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 400px;
+            font-size: xx-small;
+        }
+
+        .image-slider{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            
+        }
+        
+        .slides-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+
+        .img{
+            position: relative;
+            width: 140px;
+            object-fit: cover;
+            height: 200px;
+            transition: 0.5s;
+        }
+
+        .button {
+            position: absolute;
+            width: 140px;
+            height: 200px;
+            transition: 0.5s;
+            background-color: rgba(67, 67, 151, 0.2);
+        }
+
+        #slider-span1:target ~ .image-slider #img1,
+        #slider-span1:target ~.image-slider #button-1{
+            width:280px;
+            height: 385px;
+            background-color: transparent;
+        } 
+        #slider-span2:target ~ .image-slider #img2,
+        #slider-span2:target ~.image-slider #button-2{
+            width:280px;
+            height: 385px;
+            background-color: transparent;
+        }
+        #slider-span3:target ~ .image-slider #img3,
+        #slider-span3:target ~.image-slider #button-3{
+            width:280px;
+            height: 385px;
+            background-color: transparent;
+        }
+
+        #slider-span1:target ~.image-slider{
+            left:20%;
+        }
+        #slider-span2:target ~.image-slider{
+            left:0%;
+        }
+        #slider-span3:target ~.image-slider{
+            left:-20%;
+        }
+        audio
+        { 
+            margin:auto;
+            padding: 5px;
+        }
+        audio::-webkit-media-controls-play-button{
+            background-color:  #918f8c;
+            border-radius: 50%;
+        }
+        audio::-webkit-media-controls-timeline{
+            background-color:  #c2ac8c;
+            border-radius: 40px;
+        }
+        audio::-webkit-media-controls-volume-slider{
+            background-color:  #b7b5b2;
+            border-radius: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+	</style>
+</head>
+        <body style="display: flex; justify-content: center;"> 
+            <div class = "left">
+                <a  href="https://paramore.net/" >Paramore</a>
+                <h1 style="font-family: 'Ubuntu', sans-serif; font-size: 40PX;">
+                   Still Into You
+                </h1>
+                <div class="slides">
+                    <div class="slide-container">
+                        <span class="slider-span" id="slider-span1"></span>
+                        <span class="slider-span" id="slider-span2"></span>
+                        <span class="slider-span" id="slider-span3"></span>
+                        <div class="image-slider">
+                            <div class="slides-div" id="slide-1">
+                                <img src="pifcf.jpg" alt="" class="img" id="img1">
+                                <a href="#slider-span1" class="button" id="button-1"></a>
+                            </div>
+                            <div class="slides-div" id="slide-2">
+                                <img src="midfinal.jpg" alt="" class="img" id="img2">
+                                <a href="#slider-span2" class="button" id="button-2"></a>
+                            </div>
+                            <div class="slides-div" id="slide-3">
+                                <img src="picmid.jpg" alt="" class="img" id="img3">
+                                <a href="#slider-span3" class="button" id="button-3"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-family: 'Ubuntu', sans-serif;">
+                    "Still Into You" by Paramore is an upbeat pop-rock song about enduring love and  <br> 
+                    infatuation despite time and challenges. Released as a single from their 2013 album   <br>
+                    Paramore, the song expresses a deep connection between two people <br>
+                    who remain drawn to each other. Its catchy melody and energetic rhythm convey the thrill of lasting love. <br>
+
+
+                    With powerful vocals from Hayley Williams, the song captures the intensity of affection <br> 
+                    that persists over time. "Still Into You" celebrates a strong emotional bond, showing  <br>
+                    that some connections stay strong despite life's trials. <br>
+
+                    <p style="font-family: 'Ubuntu', sans-serif; ">
+                        Produced by <b> Justin Meldal-Johnsen and Hayley Williams</b> <br>
+                        Release Date <b> March 14,2013</b>
+                    </p>
+                </p>
+            </div>
+                <main>
+                <div class= "right">
+                    <div class= "title">
+                        <h1 class="lyrics" style="font-family: 'Ubuntu', sans-serif;"> Still Into You </h1>  
+                    </div>
+                    <audio src="Paramore - Still into You  Lyrics.mp3" controls loop></audio>
+                    <div class= "Lyrics">   
+                        <p style="font-family: 'Ubuntu', sans-serif;">
+                            [Verse 1]<br>
+                            Can't count the years on one hand that we've been together <br>
+                            I need the other one to hold you <br>
+                            Make you feel, make you feel better <br>
+                            It's not a walk in the park to love each other <br>
+                            But when our fingers interlock <br>
+                            Can't deny, can't deny you're worth it <br><br>
+
+                            [Pre-Chorus] <br>
+                            'Cause after all this time <br>
+                            I'm still into you <br><br>
+                            
+                            [Chorus] <br>
+                            I should be over all the butterflies <br>
+                            But I'm into you (I'm into you) <br>
+                            And, baby, even on our worst nights <br>
+                            I'm into you (I'm into you) <br>
+                            Let 'em wonder how we got this far <br>
+                            'Cause I don't really need to wonder at all <br>
+                            Yeah, after all this time <br>
+                            I'm still into you <br><br>
+
+
+                            [Verse 2] <br>
+                            Recount the night that I first met your mother <br>
+                            And on the drive back to my house <br>
+                            I told you that, I told you that I loved ya <br>
+                            You felt the weight of the world fall off your shoulder <br>
+                            And to your favorite song <br>
+                            We sang along to the start of forever <br><br>
+
+
+                            [Pre-Chorus] <br>
+                            And after all this time <br>
+                            I'm still into you <br><br>
+
+                            [Chorus] <br>
+                            I should be over all the butterflies <br>
+                            But I'm into you (I'm into you) <br>
+                            And, baby, even on our worst nights <br>
+                            I'm into you (I'm into you) <br>
+                            Let 'em wonder how we got this far <br>
+                            'Cause I don't really need to wonder at all <br>
+                            Yeah, after all this time <br>
+                            I'm still into you <br><br>
+
+                            [Bridge] <br>
+                            Some things just, some things just make sense <br>
+                            And one of those is you and I (Hey) <br>
+                            Some things just, some things just make sense <br>
+                            And even after all this time (Hey) <br>
+                            I'm into you <br>
+                            Baby, not a day goes by that I'm not into you <br><br>
+
+                            [Chorus] <br>
+                            I should be over all the butterflies <br>
+                            But I'm into you (I'm into you) <br>
+                            And, baby, even on our worst nights <br>
+                            I'm into you (I'm into you) <br>
+                            Let 'em wonder how we got this far <br>
+                            'Cause I don't really need to wonder at all <br>
+                            Yeah, after all this time <br>
+                            I'm still into you <br>
+                            I'm still into you <br>
+                            I'm still into you <br><br>
+
+                            
+
+                            
+                    
+                       
+
+                    </div>
+                        <footer>
+                            <p style="color: black;">© 2023 lyyyyy | Paramore | Combining Music, Lyrics, Sound, and Video</p>
+                        </footer>
+                    </div>
+                </main>
+            
+        </body>
+</html>   
